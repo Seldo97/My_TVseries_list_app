@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
+
 public class Planowane extends BazaDanych {
 
     private String updateCategory = "";
@@ -41,24 +43,28 @@ public class Planowane extends BazaDanych {
                 public View getView(int position, View convertView, ViewGroup parent) {
 
                     View v = super.getView(position, convertView, parent);
-                    //final int pos = position;
 
+                    // Zamiana wartości 0/1 w kolumnie Ulubione na puste serce/pełne serce
                     TextView tx = (TextView) v.findViewById(R.id.Ulubione);
                     if (Integer.parseInt(tx.getText().toString()) == 1)
                         tx.setText("❤️");
                     else
                         tx.setText("♡");
 
+                    // deklaracja spinnera elementu
                     changeCategory = (Spinner) v.findViewById(R.id.spinnerListKategoria);
                     changeCategory.setSelection(0, false);
                     changeCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedItem = parent.getSelectedItem().toString();
-                            int selectedViewId = listViewSeriale.getPositionForView((View) view.getParent());
-                            ;
 
+                            // id wybranego elementu spinnera
+                            String selectedItem = parent.getSelectedItem().toString();
+                            // id elementu na którym spinner się znajduje
+                            int selectedViewId = listViewSeriale.getPositionForView((View) view.getParent());
+
+                            // wybranie kolumny w bazie której spinner dotyczy czyli Kategoria
                             Cursor c = (Cursor) listAdapter.getItem(selectedViewId);
                             Integer idRow = cursor.getInt(0); // column number in database
                             String currentCategory = cursor.getString(8); // column number in database

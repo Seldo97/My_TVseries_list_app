@@ -75,11 +75,6 @@ public class MainActivity extends AppCompatActivity implements
 
         switch (item.getItemId()){
 
-//            case R.id.send:
-//               // Toast.makeText(this,"Wyslij",Toast.LENGTH_LONG).show();
-//                Intent intent2 = new Intent(this, WyslijWiadomosc.class);
-//                startActivity(intent2);
-//                return true;
             case R.id.settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
@@ -90,8 +85,6 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
 
             case R.id.about:
-//                Toast.makeText(this, "Autorem programu jest Marcin",
-//                        Toast.LENGTH_LONG).show();
                 komunikat = "Autorem programu jest Marcin";
                 snackbar = Snackbar.make(findViewById(R.id.snackbar), komunikat, czas);
                 snackbar.setAction("Wersja API", new View.OnClickListener(){
@@ -183,6 +176,10 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onRestoreInstanceState(Bundle saveInstanceState) {
         super.onRestoreInstanceState(saveInstanceState);
+
+    }
+
+    public void backToHomePage(View view){
 
     }
 }

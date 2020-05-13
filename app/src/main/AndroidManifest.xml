@@ -14,27 +14,28 @@
             android:name=".Planowane"
             android:label="Planowane"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/MyAppTheme" />
+            android:theme="@style/AppTheme">
+        </activity>
         <activity
             android:name=".Ogladane"
-            android:label="Ogladane"
+            android:label="Oglądane"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/MyAppTheme" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Porzucone"
             android:label="Porzucone"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/MyAppTheme" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Obejrzane"
             android:label="Obejrzane"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/MyAppTheme" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Ulubione"
             android:label="Ulubione"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/MyAppTheme" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".BazaDanychAktualizacja"
             android:label="Aktualizacja Danych"
@@ -48,7 +49,6 @@
         <activity
             android:name=".SettingsActivity"
             android:label="Ustawienia"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/MyAppTheme" />
 
         <activity android:name=".MainActivity">

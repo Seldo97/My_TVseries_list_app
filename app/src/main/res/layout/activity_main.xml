@@ -22,8 +22,8 @@
             tools:context=".MainActivity">
 
             <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar_main" />
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_main" />
 
             <ImageView
                 android:id="@+id/imageView"

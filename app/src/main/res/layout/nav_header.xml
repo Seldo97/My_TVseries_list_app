@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="180dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:onClick="backToHomePage"
     >
 
     <ImageView
