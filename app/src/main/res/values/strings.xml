@@ -17,6 +17,7 @@
     <string name="nav_porzucone">Porzucone</string>
     <string name="nav_obejrzane">Obejrzane</string>
     <string name="nav_projekt_ulubione">Ulubione</string>
+    <string name="nav_projekt_all_series">Wszystkie</string>
     <string name="nav_open_drawer">Otwórz szufladę</string>
     <string name="nav_close_drawer">Zamknij szufladę</string>
 
@@ -36,12 +37,8 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
         <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
     </string-array>
 
     <string name="title_activity_settings">Settings</string>
@@ -58,7 +55,12 @@
 
     <!--    Formularz-->
     <string name="grade">Ocena</string>
-    <string name="gradeMax">/ 10</string>
+    <string name="gradeMax">/ 5</string>
+    <string name="gradeMaxOnList">5</string>
+    <string name="updateButton">Aktualizuj</string>
+    <string name="cancelButton">Anuluj</string>
+    <string name="deleteButton">Usuń</string>
+
 
 
 

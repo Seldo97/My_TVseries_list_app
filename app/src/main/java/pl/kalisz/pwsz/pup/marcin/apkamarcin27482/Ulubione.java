@@ -10,16 +10,25 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.preference.PreferenceManager;
+
 public class Ulubione extends BazaDanych {
 
     @Override
     public void onResume() {
         super.onResume();
+        listViewSeriale.setAdapter(null);
+
+        // Ustawienia
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sortBy = sharedPreferences.getString("sortby", "_id");
+        sortDirection = sharedPreferences.getString("sort", "ASC");
+
         cursor = db.query("SERIAL", new String[]{"_id", "NAZWA", "SERWIS", "OCENA", "SEZON", "AKTUALNY_ODC", "ODCINKI", "ULUBIONY", "KATEGORIA"},
                 "ULUBIONY = ?", new String[]{"1"},
                 null,
                 null,
-                sortBy + " " + sortDirection);
+                sortBy + " COLLATE NOCASE " + sortDirection);
 
         if (cursor.moveToFirst()) {
             listAdapter = new SimpleCursorAdapter(this, R.layout.my_custom_list,

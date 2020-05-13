@@ -35,6 +35,10 @@
                 android:icon="@drawable/ic_action_favourite_icon"
                 android:title="@string/nav_projekt_ulubione" />
 
+<!--            <item android:id="@+id/allSeries"-->
+<!--                android:icon="@drawable/ic_action_allseries_icon"-->
+<!--                android:title="@string/nav_projekt_all_series" />-->
+
         </menu>
     </item>
 

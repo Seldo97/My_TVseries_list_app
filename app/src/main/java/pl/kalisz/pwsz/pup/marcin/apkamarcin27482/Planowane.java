@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 
 public class Planowane extends BazaDanych {
 
@@ -22,6 +23,12 @@ public class Planowane extends BazaDanych {
     @Override
     public void onResume() {
         super.onResume();
+        listViewSeriale.setAdapter(null);
+
+        // Ustawienia
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sortBy = sharedPreferences.getString("sortby", "_id");
+        sortDirection = sharedPreferences.getString("sort", "ASC");
 
         currentCategory = "Planowane";
 
@@ -29,7 +36,7 @@ public class Planowane extends BazaDanych {
                 "KATEGORIA = ?", new String[]{"Planowane"},
                 null,
                 null,
-                sortBy + " " + sortDirection);
+                sortBy + " COLLATE NOCASE " + sortDirection);
 
         if (cursor.moveToFirst()) {
             listAdapter = new SimpleCursorAdapter(this, R.layout.my_custom_list,
@@ -37,6 +44,7 @@ public class Planowane extends BazaDanych {
                     new String[]{"NAZWA", "SERWIS", "OCENA", "SEZON", "AKTUALNY_ODC", "ODCINKI", "ULUBIONY"},
                     new int[]{R.id.textNazwa, R.id.textSerwis, R.id.podanaOcena, R.id.Sezon, R.id.aktualnyOdcinek, R.id.iloscOdcinkow, R.id.Ulubione},
                     0) {
+
 
                 // XDDDDD
                 @Override
@@ -78,6 +86,7 @@ public class Planowane extends BazaDanych {
                                 // refresh list
                                 cursor.requery();
                                 listAdapter.notifyDataSetChanged();
+                                listViewSeriale.invalidateViews();
 
                                 System.out.println("Przeniesiono pozycję do sekcji: " + selectedItem + " " + currentCategory);
                                 Toast toast = Toast.makeText(getApplicationContext(), "Przeniesiono pozycję do sekcji: " + selectedItem, Toast.LENGTH_LONG);
@@ -96,7 +105,6 @@ public class Planowane extends BazaDanych {
             };
 
             listViewSeriale.setAdapter(listAdapter);
-
 
         }
 

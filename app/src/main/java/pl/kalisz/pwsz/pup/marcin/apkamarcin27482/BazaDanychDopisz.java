@@ -3,6 +3,7 @@ package pl.kalisz.pwsz.pup.marcin.apkamarcin27482;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -17,11 +18,14 @@ import android.widget.Toast;
 public class BazaDanychDopisz extends AppCompatActivity {
 
     public static final String EXTRA_CURRENT_CATEGORY = "currentCategory";
+    public static final String EXTRA_SERIAL_ID = "idSerial";
     private String currentCategory;
     private SQLiteDatabase db;
     private EditText editTextNazwa2, editTextSerwis2, editTextSezon2, editText2Odcinki;
     private Spinner spinner2Kategoria, spinner2Ocena;
     private CheckBox checkBox2Favourite;
+    private Cursor cursor;
+    private int idSerial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +128,7 @@ public class BazaDanychDopisz extends AppCompatActivity {
         }
 
     }
+
 
     @Override
     public boolean onSupportNavigateUp(){

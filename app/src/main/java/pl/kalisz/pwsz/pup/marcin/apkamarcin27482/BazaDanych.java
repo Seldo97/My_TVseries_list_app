@@ -2,6 +2,7 @@ package pl.kalisz.pwsz.pup.marcin.apkamarcin27482;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -97,7 +98,7 @@ public class BazaDanych extends AppCompatActivity implements
             @Override
             public void onItemClick(AdapterView<?> listViewOrganizacje, View view, int position, long id) {
                 Intent intent = new Intent(BazaDanych.this, BazaDanychAktualizacja.class);
-                intent.putExtra(BazaDanychAktualizacja.EXTRA_ORGANIZACJA_ID, (int) id);
+                intent.putExtra(BazaDanychDopisz.EXTRA_SERIAL_ID, (int) id);
                 startActivity(intent);
             }
         };
@@ -224,12 +225,12 @@ public class BazaDanych extends AppCompatActivity implements
 
             case R.id.about:
                 komunikat = "Autorem programu jest Marcin";
-                snackbar = Snackbar.make(findViewById(R.id.snackbar), komunikat, czas);
+                snackbar = Snackbar.make(findViewById(R.id.snackbar2), komunikat, czas);
                 snackbar.setAction("Wersja API", new View.OnClickListener() {
 
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(BazaDanych.this, getAndroidVersion(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), getAndroidVersion(), Toast.LENGTH_LONG).show();
                     }
 
                 });

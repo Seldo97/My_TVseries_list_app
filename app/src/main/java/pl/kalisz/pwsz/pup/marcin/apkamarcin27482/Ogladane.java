@@ -10,11 +10,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.preference.PreferenceManager;
+
 public class Ogladane extends BazaDanych {
 
     @Override
     public void onResume() {
         super.onResume();
+        listViewSeriale.setAdapter(null);
+
+        // Ustawienia
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sortBy = sharedPreferences.getString("sortby", "_id");
+        sortDirection = sharedPreferences.getString("sort", "ASC");
 
         currentCategory = "Ogladane";
 
@@ -22,7 +30,7 @@ public class Ogladane extends BazaDanych {
                 "KATEGORIA = ?", new String[]{"Ogladane"},
                 null,
                 null,
-                null);
+                sortBy + " COLLATE NOCASE " + sortDirection);
 
         if (cursor.moveToFirst()) {
             listAdapter = new SimpleCursorAdapter(this, R.layout.my_custom_list,

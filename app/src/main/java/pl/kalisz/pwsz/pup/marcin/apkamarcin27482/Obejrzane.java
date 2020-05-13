@@ -10,11 +10,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.preference.PreferenceManager;
+
 public class Obejrzane extends BazaDanych {
 
     @Override
     public void onResume() {
         super.onResume();
+        listViewSeriale.setAdapter(null);
+
+        // Ustawienia
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sortBy = sharedPreferences.getString("sortby", "_id");
+        sortDirection = sharedPreferences.getString("sort", "ASC");
 
         currentCategory = "Obejrzane";
 
@@ -22,7 +30,7 @@ public class Obejrzane extends BazaDanych {
                 "KATEGORIA = ?", new String[]{"Obejrzane"},
                 null,
                 null,
-                null);
+                sortBy + " COLLATE NOCASE " + sortDirection);
 
         if (cursor.moveToFirst()) {
             listAdapter = new SimpleCursorAdapter(this, R.layout.my_custom_list,
