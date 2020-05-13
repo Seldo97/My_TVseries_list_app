@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pl.kalisz.pwsz.pup.marcin.apkamarcin27482">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_projekt2"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_projekt2_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".Planowane"
+            android:label="Planowane"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Ogladane"
+            android:label="Ogladane"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Porzucone"
+            android:label="Porzucone"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Obejrzane"
+            android:label="Obejrzane"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Ulubione"
+            android:label="Ulubione"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".BazaDanychAktualizacja"
+            android:label="Aktualizacja Danych"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".BazaDanychDopisz"
+            android:label="Dodaj serial"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Ustawienia"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAppTheme" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

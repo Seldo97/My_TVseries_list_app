@@ -1,0 +1,28 @@
+<resources>
+    <!-- Sortuj po -->
+    <string-array name="sort_by_entries">
+        <item>Kolejność dodawania</item>
+        <item>Nazwa</item>
+        <item>Serwis</item>
+        <item>Ocena</item>
+    </string-array>
+
+    <string-array name="sort_by_values">
+        <item>_id</item>
+        <item>NAZWA</item>
+        <item>SERWIS</item>
+        <item>OCENA</item>
+    </string-array>
+
+
+    <!-- kierunek sortowania -->
+    <string-array name="sort_asc_desc_entries">
+        <item>Rosnąco</item>
+        <item>Malejąco</item>
+    </string-array>
+
+    <string-array name="sort_asc_desc_values">
+        <item>ASC</item>
+        <item>DESC</item>
+    </string-array>
+</resources>

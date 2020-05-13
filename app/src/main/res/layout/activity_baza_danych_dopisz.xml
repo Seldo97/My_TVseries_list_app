@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BazaDanychDopisz">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nazwa *" />
+
+            <EditText
+                android:id="@+id/EditTextNazwa2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Serwis *" />
+
+            <EditText
+                android:id="@+id/EditTextSerwis2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sezon *:" />
+
+                <EditText
+                    android:id="@+id/editTextSezon2"
+                    android:layout_width="14dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <Space
+                    android:layout_width="217dp"
+                    android:layout_height="43dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Kategoria *" />
+
+            <Spinner
+                android:id="@+id/spinner2Kategoria"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:entries="@array/kategorie" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Liczba odcinków *:" />
+
+                <Button
+                    android:id="@+id/minusEp"
+                    android:layout_width="19dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:onClick="odejmijTest"
+                    android:text="-"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/editText2Odcinki"
+                    android:layout_width="61dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/addEp"
+                    android:layout_width="19dp"
+                    android:layout_height="31dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:onClick="dodajTest"
+                    android:text="+"
+                    android:textColor="#FFFFFF" />
+
+                <Space
+                    android:layout_width="112dp"
+                    android:layout_height="43dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Ocena"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/grade" />
+
+                <Spinner
+                    android:id="@+id/spinner2Ocena"
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/ocena"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/ocena10"
+                    android:layout_width="287dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/gradeMax"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/checkBox2Favourite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Ulubione" />
+
+            <Button
+                android:id="@+id/dodajWiersz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:background="@color/colorAccent"
+                android:onClick="onClickDodaj"
+                android:text="Dodaj"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/cancelForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickCancelForm"
+                android:text="Anuluj" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="* - pola wymagane" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/sorting">
+
+        <ListPreference
+            app:defaultValue="_id"
+            app:entries="@array/sort_by_entries"
+            app:entryValues="@array/sort_by_values"
+            app:key="sortby"
+            app:title="Sortuj po:"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="ASC"
+            app:entries="@array/sort_asc_desc_entries"
+            app:entryValues="@array/sort_asc_desc_values"
+            app:key="sort"
+            app:title="Kolejność:"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

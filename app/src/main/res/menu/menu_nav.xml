@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_l6"
+            android:checked="true"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="@string/nav_planuje" />
+
+        <item
+            android:id="@+id/nav_l7"
+            android:checked="false"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="@string/nav_ogladane" />
+
+        <item
+            android:id="@+id/nav_l8"
+            android:checked="false"
+            android:icon="@drawable/ic_action_delete1_icon"
+            android:title="@string/nav_porzucone" />
+
+        <item
+            android:id="@+id/nav_l9"
+            android:checked="false"
+            android:icon="@drawable/ic_action_watched3_icon"
+            android:title="@string/nav_obejrzane" />
+
+    </group>
+
+    <item android:title="Inne:">
+        <menu>
+
+            <item android:id="@+id/temat"
+                android:icon="@drawable/ic_action_favourite_icon"
+                android:title="@string/nav_projekt_ulubione" />
+
+        </menu>
+    </item>
+
+</menu>

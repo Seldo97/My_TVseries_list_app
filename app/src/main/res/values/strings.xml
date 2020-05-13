@@ -1,0 +1,65 @@
+<resources>
+
+    <!--    Toolbar-->
+    <string name="app_name">My TV-series</string>
+    <string name="send">Wyślij wiadomość</string>
+    <string name="share">Udostępnij</string>
+    <string name="version">Wersja SDK</string>
+    <string name="about">O programie</string>
+    <string name="czujniki">Czujniki</string>
+    <string name="settings">Ustawienia</string>
+
+    <!--    Szuflada nawigacji-->
+    <string name="app_imie">Marcin Olek</string>
+    <string name="app_album">Twoje seriale</string>
+    <string name="nav_planuje">Planowane</string>
+    <string name="nav_ogladane">Oglądane</string>
+    <string name="nav_porzucone">Porzucone</string>
+    <string name="nav_obejrzane">Obejrzane</string>
+    <string name="nav_projekt_ulubione">Ulubione</string>
+    <string name="nav_open_drawer">Otwórz szufladę</string>
+    <string name="nav_close_drawer">Zamknij szufladę</string>
+
+    <string name="title_activity_baza_danych">activity_baza_danych</string>
+
+    <!-- Kategorie -->
+    <string-array name="kategorie">
+        <item>--</item>
+        <item>Planowane</item>
+        <item>Ogladane</item>
+        <item>Porzucone</item>
+        <item>Obejrzane</item>
+    </string-array>
+    <!-- Ocena -->
+    <string-array name="ocena">
+        <item>--</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="sorting">Sortowanie</string>
+
+    <!-- Sorting Preferences -->
+    <string name="sort_by">Sortuj po:</string>
+    <string name="sort_asc_desc">Sortuj:</string>
+
+    <!--    main-->
+    <string name="main_text">🔵 Dodawaj seriale \n🔵 Zapisuj postęp\n🔵 Oceniaj\n🔵 Chwal się znajomym</string>
+
+    <!--    Formularz-->
+    <string name="grade">Ocena</string>
+    <string name="gradeMax">/ 10</string>
+
+
+
+</resources>
