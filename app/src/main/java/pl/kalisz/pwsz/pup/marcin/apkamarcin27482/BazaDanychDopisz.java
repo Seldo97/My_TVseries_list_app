@@ -40,10 +40,10 @@ public class BazaDanychDopisz extends AppCompatActivity {
         spinner2Ocena = (Spinner) findViewById(R.id.spinner2Ocena);
         checkBox2Favourite = (CheckBox) findViewById(R.id.checkBox2Favourite);
 
-        currentCategory = (String) getIntent().getExtras().get(EXTRA_CURRENT_CATEGORY);
+        currentCategory = (String) getIntent().getExtras().get(EXTRA_CURRENT_CATEGORY); // wartość jakiej szukamy
         ArrayAdapter myAdap = (ArrayAdapter) spinner2Kategoria.getAdapter(); //cast to an ArrayAdapter
-        int spinnerPosition = myAdap.getPosition(currentCategory);
-        spinner2Kategoria.setSelection(spinnerPosition);
+        int spinnerPosition = myAdap.getPosition(currentCategory); // pozycja w której nasza wartośc się znajduje
+        spinner2Kategoria.setSelection(spinnerPosition); // ustawiamy selecta na tej pozycji
 
         try {
 
