@@ -1,5 +1,10 @@
 package pl.kalisz.pwsz.pup.marcin.apkamarcin27482;
 
+//########################
+//######## Author ########
+//##### Marcin Olek ######
+//########################
+
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.view.View;

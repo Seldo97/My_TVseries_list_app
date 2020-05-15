@@ -1,5 +1,10 @@
 package pl.kalisz.pwsz.pup.marcin.apkamarcin27482;
 
+//########################
+//######## Author ########
+//##### Marcin Olek ######
+//########################
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
