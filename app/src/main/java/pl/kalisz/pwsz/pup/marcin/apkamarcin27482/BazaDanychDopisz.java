@@ -59,12 +59,12 @@ public class BazaDanychDopisz extends AppCompatActivity {
 
     public void onClickDodaj(View view) {
 
-        String nazwa = editTextNazwa2.getText().toString();
-        String serwis = editTextSerwis2.getText().toString();
-        String sezon = editTextSezon2.getText().toString();
-        String odcinki = editText2Odcinki.getText().toString();
-        String kategoria = spinner2Kategoria.getSelectedItem().toString();
-        String ocena = spinner2Ocena.getSelectedItem().toString();
+        String nazwa = editTextNazwa2.getText().toString().trim();
+        String serwis = editTextSerwis2.getText().toString().trim();
+        String sezon = editTextSezon2.getText().toString().trim();
+        String odcinki = editText2Odcinki.getText().toString().trim();
+        String kategoria = spinner2Kategoria.getSelectedItem().toString().trim();
+        String ocena = spinner2Ocena.getSelectedItem().toString().trim();
         String ulubiony = "0";
 
         if (nazwa.matches("") ||
@@ -128,7 +128,6 @@ public class BazaDanychDopisz extends AppCompatActivity {
         }
 
     }
-
 
     @Override
     public boolean onSupportNavigateUp(){

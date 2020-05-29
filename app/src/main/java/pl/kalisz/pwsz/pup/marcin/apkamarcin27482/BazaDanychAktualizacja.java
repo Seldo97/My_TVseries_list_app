@@ -57,7 +57,7 @@ public class BazaDanychAktualizacja extends AppCompatActivity {
             cursor = db.query("SERIAL", new String[]{"_id", "NAZWA", "SERWIS", "OCENA", "SEZON", "AKTUALNY_ODC", "ODCINKI", "ULUBIONY", "KATEGORIA"}, "_id = ?",
                     new String[]{Integer.toString(idSerial)}, null, null, null);
 
-            if(cursor.moveToFirst()) {
+            if (cursor.moveToFirst()) {
 
                 nazwa = cursor.getString(1);
                 editTextNazwa2Update.setText(nazwa);
@@ -80,7 +80,7 @@ public class BazaDanychAktualizacja extends AppCompatActivity {
                 editText2OdcinkiUpdate.setText(odcinki);
 
                 ulubiony = cursor.getString(7);
-                if(ulubiony.equals("1"))
+                if (ulubiony.equals("1"))
                     checkBox2FavouriteUpdate.setChecked(true);
 
                 kategoria = cursor.getString(8);
@@ -101,34 +101,46 @@ public class BazaDanychAktualizacja extends AppCompatActivity {
 
     public void onClickUpdate(View view) {
 
-        nazwa = editTextNazwa2Update.getText().toString();
-        serwis = editTextSerwis2Update.getText().toString();
-        sezon = editTextSezon2Update.getText().toString();
-        aktualnyOdc = editText2OCurrentEpUpdate.getText().toString();
-        odcinki = editText2OdcinkiUpdate.getText().toString();
-        kategoria = spinner2KategoriaUpdate.getSelectedItem().toString();
-        ocena = spinner2OcenaUpdate.getSelectedItem().toString();
+        nazwa = editTextNazwa2Update.getText().toString().trim();
+        serwis = editTextSerwis2Update.getText().toString().trim();
+        sezon = editTextSezon2Update.getText().toString().trim();
+        aktualnyOdc = editText2OCurrentEpUpdate.getText().toString().trim();
+        odcinki = editText2OdcinkiUpdate.getText().toString().trim();
+        kategoria = spinner2KategoriaUpdate.getSelectedItem().toString().trim();
+        ocena = spinner2OcenaUpdate.getSelectedItem().toString().trim();
         ulubiony = "0";
 
-        if (checkBox2FavouriteUpdate.isChecked())
-            ulubiony = "1";
+        if (nazwa.matches("") ||
+                serwis.matches("") ||
+                sezon.matches("") ||
+                odcinki.matches("") ||
+                kategoria.equals("--")
+        ) {
 
-        ContentValues obiektValues = new ContentValues();
+            Toast toast = Toast.makeText(this, "Wypełnij wymagane pola!", Toast.LENGTH_LONG);
+            toast.show();
 
-        obiektValues.put("NAZWA", nazwa);
-        obiektValues.put("SEZON", Integer.parseInt(sezon));
-        obiektValues.put("SERWIS", serwis);
-        obiektValues.put("KATEGORIA", kategoria);
-        obiektValues.put("OCENA", ocena);
-        obiektValues.put("ODCINKI", Integer.parseInt(odcinki));
-        obiektValues.put("AKTUALNY_ODC", Integer.parseInt(aktualnyOdc));
-        obiektValues.put("ULUBIONY", Integer.parseInt(ulubiony));
+        } else {
 
-        db.update("SERIAL", obiektValues, "_id = ?", new String[] {Integer.toString(idSerial)});
+            if (checkBox2FavouriteUpdate.isChecked())
+                ulubiony = "1";
 
-        db.close();
-        finish();
+            ContentValues obiektValues = new ContentValues();
 
+            obiektValues.put("NAZWA", nazwa);
+            obiektValues.put("SEZON", Integer.parseInt(sezon));
+            obiektValues.put("SERWIS", serwis);
+            obiektValues.put("KATEGORIA", kategoria);
+            obiektValues.put("OCENA", ocena);
+            obiektValues.put("ODCINKI", Integer.parseInt(odcinki));
+            obiektValues.put("AKTUALNY_ODC", Integer.parseInt(aktualnyOdc));
+            obiektValues.put("ULUBIONY", Integer.parseInt(ulubiony));
+
+            db.update("SERIAL", obiektValues, "_id = ?", new String[]{Integer.toString(idSerial)});
+
+            db.close();
+            finish();
+        }
     }
 
     public void onClickDelete(View view) {
@@ -190,8 +202,7 @@ public class BazaDanychAktualizacja extends AppCompatActivity {
             aktualnyOdc.setText("1");
         } else if (Integer.parseInt(aktualnyOdc.getText().toString()) >= Integer.parseInt(odcinki.getText().toString())) {
             aktualnyOdc.setText(odcinki.getText().toString());
-        }
-        else {
+        } else {
             Integer liczbaOdcinkow = Integer.parseInt(aktualnyOdc.getText().toString()) + 1;
             aktualnyOdc.setText(liczbaOdcinkow.toString());
         }
@@ -211,7 +222,7 @@ public class BazaDanychAktualizacja extends AppCompatActivity {
     }
 
     @Override
-    public boolean onSupportNavigateUp(){
+    public boolean onSupportNavigateUp() {
         finish();
         return true;
     }
